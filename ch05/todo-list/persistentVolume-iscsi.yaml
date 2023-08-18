@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv01
+spec:
+  capacity:
+    storage: 50Mi
+  accessModes:
+    - ReadWriteOnce
+  iscsi:
+    targetPortal: 192.168.2.250:3260
+    portals: ['192.168.2.250:3260']
+    iqn: iqn.2003-01.org.linux-iscsi.smitstore.aarch64:sn.243f471f81e4
+    lun: 0
+    fsType: 'ext4'
+    readOnly: false
