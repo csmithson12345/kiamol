@@ -26,10 +26,10 @@ spec:
       containers:
         - name: nginx
           image: nginx
-      #     volumeMounts:
-      #       - name: data
-      #         mountPath: /var/lib/postgresql/data
-      # volumes:
-      #   - name: data
-      #     persistentVolumeClaim:
-      #       claimName: postgres-pvc
+          volumeMounts:
+            - name: data
+              mountPath: /var/lib/postgresql/data
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: postgres-pvc
